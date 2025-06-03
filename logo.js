@@ -74,11 +74,13 @@ function setup() {
   }
 
   for (let i = 0; i < lines[0].total; i++) {
-  lines[0].colors[i] = color(140); // 회색
-  lines[0].offsets[i] = 0;
-  lines[0].targetColors[i] = lines[0].originalColors[i]; // 나중에 도달할 목표
-  lines[0].targetOffsets[i] = 0;
-}
+    lines[0].colors[i] = color(140); // 회색
+    lines[0].offsets[i] = 0;
+    lines[0].targetColors[i] = lines[0].originalColors[i]; // 나중에 도달할 목표
+    lines[0].targetOffsets[i] = 0;
+  }
+
+  alert("press 'Enter' to call laura\nclick to change logo");
 }
 
 function draw() {
@@ -104,22 +106,19 @@ function draw() {
         mode = "circle";
       }
     } else if (mode === "circle") {
-
       line.drawCircle(pg, pg.width / 2, pg.height / 2, 100); // 중심 기준으로 이동했기 때문에 (0, 0)
-
     } else if (mode === "circleToLine") {
       const done = line.updateAndDraw(pg);
       if (done) {
         mode = "line";
       }
     } else if (mode === "line") {
-// 기존 y 기준 중심 → x 기준 중심으로 변경
-let totalWidth = lines[0].total * 8; // 64칸 × 8px
-let x = pg.width / 2 - totalWidth / 2;
-let y = pg.height / 2 - 8 / 2; // 줄 1줄 높이만큼 중앙 정렬
+      // 기존 y 기준 중심 → x 기준 중심으로 변경
+      let totalWidth = lines[0].total * 8; // 64칸 × 8px
+      let x = pg.width / 2 - totalWidth / 2;
+      let y = pg.height / 2 - 8 / 2; // 줄 1줄 높이만큼 중앙 정렬
 
-lines[0].display(pg, x, y);
-
+      lines[0].display(pg, x, y);
     }
   }
 
@@ -196,7 +195,7 @@ function keyPressed() {
   }
 
   if (keyCode === ENTER && !isRecording) {
-      console.log("keyPressed", key, keyCode);  // ← 여기 추가
+    console.log("keyPressed", key, keyCode); // ← 여기 추가
 
     startRecording();
   }
