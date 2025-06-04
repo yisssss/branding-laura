@@ -4,7 +4,7 @@ let isRecording = false;
 let silenceTimer;
 let volumeHistory = [];
 let pitchHistory = [];
-const totalBands = 64;
+const totalBands = 128;
 
 async function startRecording() {
   audioCtx = new AudioContext();

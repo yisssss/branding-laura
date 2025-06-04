@@ -1,6 +1,6 @@
 class PixelLine {
   constructor(img, x) {
-    this.total = 64;
+    this.total = 128;
 
     this.colors = [];
     this.originalColors = [];
@@ -171,7 +171,7 @@ drawCircle(pg, cx, cy, radius) {
 
       pg.fill(c);
 
-    pg.rect(x, y, 10, 10);
+    pg.rect(x, y, 8, 8);
   }
 }
 

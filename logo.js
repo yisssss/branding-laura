@@ -73,6 +73,7 @@ function setup() {
     line.fadeToOriginal(1);
   }
 
+  
   for (let i = 0; i < lines[0].total; i++) {
     lines[0].colors[i] = color(140); // 회색
     lines[0].offsets[i] = 0;
@@ -80,7 +81,8 @@ function setup() {
     lines[0].targetOffsets[i] = 0;
   }
 
-  alert("press 'Enter' to call laura\nclick to change logo");
+alert("press 'Enter' to call laura\nclick to change logo");
+  
 }
 
 function draw() {
